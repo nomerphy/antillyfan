@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 const robot = new Discord.Client();
 const comms = require("./comms.js");
 const fs = require("fs");
-// let config = require("./config.json");
+let config = require("./config.json");
 const USER_ID = '374863997209673738';
 
 let filesArray = [
@@ -63,7 +63,7 @@ let phrasesArray = [
 
 
 // let token = config.token;
-//let prefix = config.prefix;
+let prefix = config.prefix;
 
 robot.on("ready", () => {
 	console.log(robot.user.username + " started!");
@@ -87,7 +87,7 @@ robot.on("message", (msg) => {
 		let messArr = comm.split(" ");
 
 		for (comm_count in comms.comms) {
-			let comm2 = PREFIX + comms.comms[comm_count].name;
+			let comm2 = prefix + comms.comms[comm_count].name;
 			if (comm2 == comm_name) {
 				comms.comms[comm_count].out(robot, msg, messArr);
 			}
