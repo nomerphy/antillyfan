@@ -64,7 +64,6 @@ let phrasesArray = [
 
 // let token = config.token;
 //let prefix = config.prefix;
-let prefix = PREFIX;
 
 robot.on("ready", () => {
 	console.log(robot.user.username + " started!");
@@ -87,12 +86,12 @@ robot.on("message", (msg) => {
 		let comm_name = comm.slice(0, comm.indexOf(" "));
 		let messArr = comm.split(" ");
 
-		for (comm_count in comms.comms) {
-			let comm2 = prefix + comms.comms[comm_count].name;
-			if (comm2 == comm_name) {
-				comms.comms[comm_count].out(robot, msg, messArr);
-			}
-		}
+		// for (comm_count in comms.comms) {
+		// 	let comm2 = prefix + comms.comms[comm_count].name;
+		// 	if (comm2 == comm_name) {
+		// 		comms.comms[comm_count].out(robot, msg, messArr);
+		// 	}
+		// }
 	}
 
 	
