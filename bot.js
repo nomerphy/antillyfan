@@ -1,8 +1,8 @@
 const Discord = require("discord.js");
 const robot = new Discord.Client();
 const comms = require("./comms.js");
+//const config = require('./config.json');
 const fs = require("fs");
-let config = require("./config.json");
 const USER_ID = '374863997209673738';
 
 let filesArray = [
@@ -62,8 +62,8 @@ let phrasesArray = [
 
 
 
-let token = config.token;
-let prefix = config.prefix;
+let token = token; //config.token
+let prefix = prefix; //config.prefix
 
 robot.on("ready", () => {
 	console.log(robot.user.username + " started!");
